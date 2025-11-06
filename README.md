@@ -1,6 +1,6 @@
 ﻿# README for Assignment-02 - Alexander Younis
 
-Live: (paste your Render URL here)
+Live: https://assignment-02-kbii.onrender.com (render)
 Repo: https://github.com/mav-21/Assignment-02
 
 # what i did to run locally
