@@ -1,0 +1,31 @@
+<h1 class="mb-3"><i class="fa-solid fa-paper-plane"></i> Contact Me</h1> <!-- heading with paper plane icon and bottom margin -->
+
+<form class="row g-3" method="post" action="/contact" onsubmit="showMessage(event)"> <!-- form styled as a grid, runs showMessage() instead of sending data -->
+  <div class="col-md-6"> <!-- Left column (half width) for the name field -->
+    <label class="form-label">Name</label> <!-- label for name input -->
+    <input class="form-control" name="name" placeholder="Your name" required> <!-- user enters their name -->
+  </div>
+  <div class="col-md-6"> <!-- right column (half width) for the email field -->
+    <label class="form-label">Email</label> <!-- label for email input -->
+    <input class="form-control" type="email" name="email" placeholder="you@example.com" required> <!-- email input w/ validation -->
+  </div>
+  <div class="col-12"> <!-- full width column for message text area -->
+    <label class="form-label">Message</label> <!-- label for message box -->
+    <textarea class="form-control" name="message" rows="5" placeholder="Say hi!" required></textarea> <!-- input for users message -->
+  </div>
+  <div class="col-12"> <!-- full width column for submit button -->
+    <button class="btn btn-primary" type="submit"> <!-- bootstrap styled submit button -->
+      <i class="fa-solid fa-paper-plane"></i> Send <!-- icon and text inside button -->
+    </button>
+  </div>
+</form> <!-- end of form -->
+
+<p id="confirmation" class="mt-3 text-success fw-bold" style="display:none;">Your message has been sent, thank you for contacting and have a good day!</p> <!-- hidden success message -->
+
+<script>
+  function showMessage(event) { // function triggered on submit
+    event.preventDefault(); // prevents form from refreshing page
+    document.getElementById('confirmation').style.display = 'block'; // shows success message
+    event.target.reset(); // clears form inputs after submission
+  }
+</script>

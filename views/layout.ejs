@@ -1,0 +1,63 @@
+<!DOCTYPE html> <!-- standard HTML5 declaration -->
+<html lang="en"> <!-- sets the language -->
+<head>
+  <meta charset="UTF-8"> <!-- defines text encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes layout responsive on all devices -->
+  <title><%= title || "My Portfolio" %></title> <!-- dynamic page title, defaults to “My Portfolio” if none provided -->
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- includes Bootstrap CSS for layout and styling -->
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"> <!-- imports icons for UI (e.g., GitHub, LinkedIn, etc.) -->
+
+  <!-- custom CSS -->
+  <link href="/stylesheets/style.css" rel="stylesheet"> <!-- links to personal stylesheet for overrides -->
+</head>
+<body class="d-flex flex-column min-vh-100"> <!-- flex column layout ensures footer stays at bottom -->
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- responsive dark Bootstrap navbar -->
+    <div class="container"> <!-- centers content horizontally -->
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-code"></i> My Portfolio</a> <!-- text linking to homepage -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"> <!-- toggle button for small screens -->
+        <span class="navbar-toggler-icon"></span> <!-- hamburger icon for mobile -->
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse"> <!-- collapsible menu section -->
+        <ul class="navbar-nav ms-auto"> <!-- right aligned nav items -->
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li> <!-- link to home -->
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li> <!-- link to about page -->
+          <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li> <!-- link to projects -->
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li> <!-- link to contact page -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- page content outlet -->
+  <main class="flex-fill"> <!-- main content expands to fill vertical space -->
+    <div class="container py-4"> <!-- adds padding around inner content -->
+      <%- body %> <!-- EJS placeholder where each page’s content is injected -->
+    </div>
+  </main>
+
+  <!-- footer with GitHub + LinkedIn  -->
+  <footer class="bg-light mt-auto py-3 border-top"> <!-- light footer that sticks to bottom -->
+    <div class="container d-flex justify-content-between align-items-center"> <!-- flex layout for spacing between text and links -->
+      <span class="text-muted">© <%= new Date().getFullYear() %> Alexander Younis</span> <!-- updates copyright year -->
+      <span>
+        <a href="https://github.com/mav-21" class="me-3" target="_blank" rel="noopener"> <!-- GitHub link opens in new tab -->
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/alexanderyounis" target="_blank" rel="noopener"> <!-- LinkedIn link opens in new tab -->
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- includes Bootstrap JS + Popper for interactivity -->
+  <!-- my JS -->
+  <script src="/javascripts/main.js"></script> <!-- custom JS for dynamic features -->
+</body>
+</html> <!-- closes document -->

@@ -1,0 +1,15 @@
+<!DOCTYPE html> <!-- standard HTML5 declaration -->
+<html lang="en"> <!-- sets language -->
+<head>
+  <meta charset="UTF-8"> <!-- ensures proper character encoding -->
+  <title><%= title || 'Error' %></title> <!--  dynamic page title. defaults is 'Error' if none passed -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- imports Bootstrap 5 for styling -->
+</head>
+<body class="container py-4"> <!-- gives a padded container layout using Bootstrap -->
+  <h1 class="mb-2"><%= message %></h1> <!-- outputs main error message dynamically -->
+  <% if (error && error.status) { %> <!-- checks if error object exists and has status -->
+    <h2 class="text-muted">Status: <%= error.status %></h2> <!-- displays the status code (e.g. 404, 500) -->
+  <% } %> <!-- ends if block -->
+  <a class="btn btn-primary mt-3" href="/">Go Home</a> <!-- button to take user back to home page -->
+</body>
+</html> <!-- closes the document -->
